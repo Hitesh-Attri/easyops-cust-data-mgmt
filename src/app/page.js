@@ -80,7 +80,9 @@ export default function Home() {
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <HStack spacing={8} alignItems={"center"}></HStack>
+          <HStack spacing={8} alignItems={"center"}>
+            <Text fontWeight={700}>Customer Data Management</Text>
+          </HStack>
           <Flex alignItems={"center"}>
             <Link
               href="/add-customer"
