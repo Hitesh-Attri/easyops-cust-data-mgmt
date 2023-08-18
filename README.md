@@ -1,16 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Getting Started,(Initial few requests might execute slow; As the backend used is hosted on a free platform; Server might be on sleep mode due to inactivity)
 
-First, run the development server:
+1) Install the dependencies by running the following cmd:
+```bash
+npm install
+```
 
+2) Run the project on the local server executing following cmd:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
+
+3) run the development server:
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
