@@ -34,7 +34,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas";
 import { AddIcon } from "@chakra-ui/icons";
-import BASE_URL from "@/BASE_URL";
 
 import { useSelector } from "react-redux";
 
@@ -92,7 +91,7 @@ export default function Page() {
     try {
       console.log(editCustomerObj.id, "editCustomerObj.id");
       const res = await axios.put(
-        `${BASE_URL}/update-customer/${editCustomerObj.id}`,
+        `/api/update-customer/${editCustomerObj.id}`,
         {
           name: toTitleCase(values.name.trim()),
           phoneNumber: values.phoneNumber,

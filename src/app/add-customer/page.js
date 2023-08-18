@@ -34,7 +34,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas";
 import { AddIcon } from "@chakra-ui/icons";
-import BASE_URL from "@/BASE_URL";
 
 const toTitleCase = (phrase) => {
   return phrase
@@ -77,7 +76,7 @@ export default function Page() {
 
   const createCustomer = async (values) => {
     try {
-      const res = await axios.post(`${BASE_URL}/create-customer`, {
+      const res = await axios.post(`/api/create-customer`, {
         name: toTitleCase(values.name.trim()),
         phoneNumber: values.phoneNumber,
         email: values.email,

@@ -18,7 +18,6 @@ import {
 import React, { useState } from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Toaster, toast } from "react-hot-toast";
-import BASE_URL from "@/BASE_URL";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -37,7 +36,7 @@ const Card = ({ id, name, phoneNumber, email }) => {
     console.log(id);
 
     try {
-      let res = await axios.delete(`${BASE_URL}/delete-customer/${id}`);
+      let res = await axios.delete(`/api/delete-customer/${id}`);
       // console.log(res.data);
       if (res.data.success) {
         toast.success("Customer deleted.");

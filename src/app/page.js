@@ -27,7 +27,6 @@ import {
 
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 import axios from "axios";
-import BASE_URL from "@/BASE_URL";
 import Card from "./components/Card";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -47,7 +46,7 @@ export default function Home() {
   }, []);
   const getAllCustomers = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/get-all-customers`);
+      const res = await axios.get(`/api/get-all-customers`);
       // console.log(res.data);
       // setCustomers(res.data.customers.reverse());
       dispatch(setCustomersData(res.data.customers.reverse()));
@@ -76,6 +75,12 @@ export default function Home() {
     dispatch(setCustomersData(data));
   };
 
+  const testNextApiFunc = async () => {
+    console.log("clicked");
+    let res = await axios.get("/api/get-all-customers");
+    console.log(res, "next api route test");
+  };
+
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -99,6 +104,15 @@ export default function Home() {
                 Add Customer
               </Button>
             </Link>
+            <Button
+              variant={"solid"}
+              colorScheme={"teal"}
+              size={"sm"}
+              mr={4}
+              onClick={() => testNextApiFunc()}
+            >
+              Test
+            </Button>
           </Flex>
         </Flex>
       </Box>
