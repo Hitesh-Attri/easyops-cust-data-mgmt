@@ -104,15 +104,6 @@ export default function Home() {
                 Add Customer
               </Button>
             </Link>
-            <Button
-              variant={"solid"}
-              colorScheme={"teal"}
-              size={"sm"}
-              mr={4}
-              onClick={() => testNextApiFunc()}
-            >
-              Test
-            </Button>
           </Flex>
         </Flex>
       </Box>
