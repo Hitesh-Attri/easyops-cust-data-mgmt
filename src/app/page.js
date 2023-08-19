@@ -46,7 +46,9 @@ export default function Home() {
   }, []);
   const getAllCustomers = async () => {
     try {
-      const res = await axios.get(`/api/get-all-customers`);
+      const res = await axios.get(`/api/get-all-customers`, {
+        cache: "no-store",
+      });
       // console.log(res.data);
       // setCustomers(res.data.customers.reverse());
       dispatch(setCustomersData(res.data.customers.reverse()));

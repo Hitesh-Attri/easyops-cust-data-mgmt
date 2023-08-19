@@ -96,6 +96,9 @@ export default function Page() {
           name: toTitleCase(values.name.trim()),
           phoneNumber: values.phoneNumber,
           email: values.email,
+        },
+        {
+          cache: "no-store",
         }
       );
       console.log(res.data, "res.data");
